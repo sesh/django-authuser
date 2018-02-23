@@ -35,6 +35,6 @@ Update your `urls.py` in include the signup and logout urls:
 ```
 urlpatterns = [
     ...,
-    url(r'^accounts/', include('authuser.urls')),
+    path('accounts/', include('authuser.urls')),
 ]
 ```
