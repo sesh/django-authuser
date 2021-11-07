@@ -9,12 +9,12 @@ class SignUpForm(forms.Form):
     password_again = forms.CharField(widget=forms.PasswordInput())
 
     def clean_email(self):
-        value = self.cleaned_data['email'].strip()
+        value = self.cleaned_data["email"].strip()
         if User.objects.filter(email=value):
-            raise forms.ValidationError("That email is already taken")
+            raise forms.ValidationError("That email is already in user")
         return value
 
     def clean(self):
         cleaned_data = super().clean()
-        if cleaned_data['password'] != cleaned_data['password_again']:
+        if cleaned_data["password"] != cleaned_data["password_again"]:
             raise forms.ValidationError("The passwords you entered did not match")

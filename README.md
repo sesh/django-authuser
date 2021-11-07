@@ -24,10 +24,16 @@ Add the app to your `INSTALLED_APPS`, and configure your `AUTH_USER_MODEL` setti
 ```
 INSTALLED_APPS = [
     ...
-    'authuser',
+    "authuser",
 ]
 
-AUTH_USER_MODEL = 'authuser.User'
+AUTH_USER_MODEL = "authuser.User"
+```
+
+Add the following to your `settings.py` to allow signups:
+
+```
+AUTH_USER_ALLOW_SIGNUP = True
 ```
 
 Update your `urls.py` in include the signup and logout urls:
