@@ -32,8 +32,3 @@ def signup(request):
             "form": form,
         },
     )
-
-
-def logout(request):
-    logout_user(request)
-    return redirect("/")
