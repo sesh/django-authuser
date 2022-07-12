@@ -5,6 +5,21 @@ from .models import User
 
 
 class CustomUserAdmin(UserAdmin):
+    add_fieldsets = (
+        (None, {"fields": ("name", "email", "password1", "password2")}),
+        (
+            "Permissions",
+            {
+                "fields": (
+                    "is_active",
+                    "is_staff",
+                    "is_superuser",
+                    "groups",
+                    "user_permissions",
+                )
+            },
+        ),
+    )
     fieldsets = (
         (None, {"fields": ("name", "email", "password")}),
         (
